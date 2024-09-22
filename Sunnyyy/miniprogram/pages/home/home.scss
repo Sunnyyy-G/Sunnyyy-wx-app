@@ -1,0 +1,13 @@
+/* pages/home/home.wxss */
+.fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(131, 143, 255); /* 可根据需求修改 */
+	z-index: 1; /* 确保在最上层 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

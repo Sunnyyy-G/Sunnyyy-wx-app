@@ -1,0 +1,23 @@
+<!--pages/welcome/welcome.wxml-->
+<view class="container">
+  <video
+      class="video"
+      id="myVideo" 
+      src="https://cdn.genmo.dev/results/text_to_video_v3/2024-09-13/07/cm10e32wp00200cjq3sy14p9h/video.mp4" 
+      autoplay
+      loop
+      object-fit="fill"
+      binderror="videoErrorCallback" 
+      enable-danmu 
+      show-center-play-btn='{{false}}'
+      show-play-btn='{{false}}'
+      show-progress='{{false}}'
+      show-bottom-progress='{{false}}'
+      show-fullscreen-btn='{{false}}'
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+    ></video>
+    <text>欢迎来到我的小程序</text>
+    <button bindtap="goHome">进入首页</button>
+  </view>

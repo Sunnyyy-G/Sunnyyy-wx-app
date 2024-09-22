@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<view class="fullscreen">
+	<button bindtap="navigateToDetail">进入欢迎页</button>
+</view>
