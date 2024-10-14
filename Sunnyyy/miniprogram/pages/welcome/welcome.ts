@@ -4,14 +4,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+		dateTime: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+		this.updateDateTime();
+    setInterval(() => {
+      this.updateDateTime();
+    }, 1000);
+	},
+	
+	updateDateTime() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const dateTimeStr = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+    this.setData({
+      dateTime: dateTimeStr,
+    });
+    return dateTimeStr;
   },
 
   /**

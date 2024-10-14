@@ -12,8 +12,9 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "coverView": false,
-    "postcss": false,
+    "coverView": true,
+    "postcss": true,
+    "es6": true,
     "minified": false,
     "enhance": false,
     "showShadowRootInWxmlPanel": false,
