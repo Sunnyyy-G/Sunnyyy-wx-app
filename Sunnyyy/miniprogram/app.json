@@ -1,10 +1,12 @@
 {
+  "entryPagePath": "pages/welcome/welcome",
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/welcome/welcome",
     "pages/home/home",
-    "pages/chart/chart"
+    "pages/chart/chart",
+    "pages/practice/practice"
   ],
   "tabBar": {
     "list": [
@@ -15,10 +17,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "Index"
-			},
-			{
+      },
+      {
         "pagePath": "pages/chart/chart",
         "text": "Chart"
+      },
+      {
+        "pagePath": "pages/practice/practice",
+        "text": "Practice"
       }
     ]
   },
@@ -37,5 +43,5 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-	"lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents"
 }
