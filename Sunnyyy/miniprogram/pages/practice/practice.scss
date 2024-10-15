@@ -61,3 +61,41 @@ page {
 .nickname-input {
   flex: 1;
 }
+
+.container {
+	justify-content: flex-start;
+	padding: 100rpx 0;
+	background: rgb(187, 241, 255);
+	height: auto;
+	min-height: 100%;
+}
+
+.usermotto {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display: none;
+}
+
+.practice-area {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0 20rpx;
+
+	.practice-section {
+		padding: 36rpx;
+		border: 2rpx solid rgb(0, 84, 211);
+		border-radius: 20rpx;
+
+		&:not(:last-child) {
+			margin-bottom: 36rpx;
+		}
+	}
+
+	.practice-tit {
+		font-size: 36rpx;
+		font-weight: bold;
+		color: #000;
+	}
+}

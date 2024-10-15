@@ -1,26 +1,12 @@
 <!--pages/practice/practice.wxml-->
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
 <navigation-bar title="Home" back="{{false}}" color="black" background="#FFF"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
-    <!-- <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
-        </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view> -->
     <view class="usermotto">
 			<block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
         <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
@@ -32,8 +18,7 @@
         </view>
       </block>
 			<block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
+        <button bindtap="getUserProfile"> 获取头像昵称 </button>
       </block>
 			<block wx:else>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -41,5 +26,44 @@
       </block>
       <text class="user-motto">{{motto}}</text>
     </view>
+		<view class="practice-area">
+			<!-- 数据绑定 -->
+			<view class="practice-section">
+				<view class="practice-tit">数据绑定</view>
+				<view>{{ message }}</view>
+			</view>
+			
+			<!-- 列表渲染 -->
+			<view class="practice-section">
+				<view class="practice-tit">列表渲染</view>
+				<view wx:for="{{testArray}}" wx:key="*this">{{item}}</view>
+			</view>
+			
+			<!-- 条件渲染 -->
+			<view class="practice-section">
+				<view class="practice-tit">条件渲染</view>
+				<view wx:if="{{view === 'APP'}}">if：APP</view>
+				<view wx:elif="{{view === 'WX'}}">elif：WX</view>
+				<view wx:else="{{view === 'H5'}}">else：H5</view>
+			</view>
+			
+			<!-- 模板 -->
+			<view class="practice-section">
+				<view class="practice-tit">模板</view>
+				<template is="staffName" data="{{...staffA}}"/>
+				<template is="staffName" data="{{...staffB}}"/>
+				<template is="staffName" data="{{...staffC}}"/>
+			</view>
+			<!-- 事件 -->
+			<view class="practice-section">
+				<view class="practice-tit">事件</view>
+			</view>
+
+			<!-- XXX -->
+			<view class="practice-section">
+				<view class="practice-tit">XXX</view>
+			</view>
+	
+		</view>
   </view>
 </scroll-view>
